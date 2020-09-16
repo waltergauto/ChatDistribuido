@@ -54,25 +54,29 @@ public class server{
     }
 
     public void tellEveryone(String message, Socket sender) {
-        /*Iterator it = clientOutputStreams.iterator();
-        while (it.hasNext()) {
-            try {
-                PrintWriter writer = (PrintWriter) it.next();
-                writer.println(message);
-                writer.flush();
-            } catch (Exception ex) { ex.printStackTrace(); }
-        }*/
+        /////DICE QUIEN ESTA CONECTADO.
         if(message.equals("1")){
             try{
                 PrintWriter writer = (PrintWriter) clientOutputStreams.get(clientsOnline.indexOf(sender));
                 Iterator it = clientsOnline.iterator();
+                int counter = 0;
                 while(it.hasNext()){
+                    counter++;
                     Socket a = (Socket) it.next();
                     InetAddress b = a.getInetAddress();
-                    writer.println(b.getHostAddress());
+                    writer.println(counter+" "+b.getHostAddress());
                     writer.flush();
                 }
             }catch(Exception ex) {ex.printStackTrace();}
+        }else{//Broadcast si es cualquier otra cosa
+            Iterator it = clientOutputStreams.iterator();
+            while (it.hasNext()) {
+                try {
+                    PrintWriter writer = (PrintWriter) it.next();
+                    writer.println(message);
+                    writer.flush();
+                } catch (Exception ex) { ex.printStackTrace(); }
+            }
         }
     }
 }
