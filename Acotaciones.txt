@@ -5,7 +5,7 @@ Observaciones a tener en cuenta para el proyecto de Chat                        
 1. Hasta el momento se tienen dos clases(Cliente y Servidor), las cuales realizan sus respectivas funciones.
 2. Se utiliza la libreria swing de java para implementar una pequeña ventana básica para la clase cliente y otra para la clase servidor.
 3. Para probar la funcionalidad hasta el momento, se han creado dos máquinas virtuales simulando ser dos clientes que quieren intercambiar mensajes y ejecutando el servidor en la máquina local.
-4. Aún no se logra que los clientes interactúen entre si pero si pueden enviar paquetes al servidor informando que están en estado activo, eso es un requisito previo del sistema.
+4. Aún no se logra que los clientes interactúen entre si, pero si pueden enviar paquetes al servidor informando que están en estado activo, eso es un requisito previo del sistema.
 5. Se pretende crear una lista desplegable en cada cliente donde el mismo pueda verificar quienes están en estado activo para poder iniciar una conversación, la funcionalidad aún no está implementada como tal
 pero para las pruebas utilizamos unos mensajes estáticos a fin de poder visualizar el correcto funcionamiento de la ventana desplegable(Ej: Usuario1, Usuario2) ya que utilizamos un JComboBox.
 6. Para detallar un poco mejor la funcionalidad del item 6 cabe mencionar que la idea es mapear el nick name de un cliente con su dirección ip y poder mostrarle a un cliente determinado solo el nick name de los demás clientes. En principio
